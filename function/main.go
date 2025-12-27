@@ -75,3 +75,12 @@ func printAtLast() string {
 	fmt.Printf("This will be printed at last\n")
 	return "End of Function"
 }
+
+type Cat struct {
+	Name string
+}
+
+func (c Cat) String() string {
+	fmt.Println("Cat Name: ", c.Name)
+	return c.Name
+}
