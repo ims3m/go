@@ -6,6 +6,15 @@ func chDelta(v *int) {
 	*v = 10
 }
 
+type Person struct {
+	name   string
+	health int
+}
+
+func playerTakesDamage(p *Person) {
+	p.health -= 10
+}
+
 func main() {
 
 	x := 4
@@ -35,5 +44,15 @@ func main() {
 	fmt.Println(b)
 	chDelta(&b)
 	fmt.Println(b)
+
+	mx := Person{
+		name:   "Hero",
+		health: 100,
+	}
+
+	// Pointer is a 8 byte long integer
+	fmt.Printf("Before taking damage: %d\n", mx.health)
+	playerTakesDamage(&mx)
+	fmt.Printf("After taking damage : %d\n", mx.health)
 
 }
